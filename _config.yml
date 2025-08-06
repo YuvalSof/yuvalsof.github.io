@@ -15,9 +15,9 @@ timezone: Europe/London
 
 title: Yuval Soffer # the main title
 
-tagline: I'm a senior business analyst in the FinTech industry, where I use numbers to
-drive business logic and, in my data science adventures, I bring business logic to the
-numbers # it will display as the subtitle
+tagline: >-
+  I'm a senior business analyst in the FinTech industry, where I use numbers to
+  drive business logic and, in my data science adventures, I bring business logic to the numbers.
 
 description: >- # used by seo meta and the atom feed
   yuval soffer, business analytics, data, dataset, data science, python, feature engineering, buisness insights, github, actionable, gpt, llm.
