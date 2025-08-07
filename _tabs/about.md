@@ -4,8 +4,6 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-I’m a senior business analyst with a proven ability to turn complexity into clarity. My experience spans multiple industries, combining both macro and micro-level market research to support cross-functional teams with analysis that drives real business decisions.
+I work at the intersection of data, strategy, and go-to-market. Over the years, I’ve collaborated with strategy, marketing, and revenue operations teams to turn business questions into data, data into insight, and insight into action. My background spans business performance analysis, customer behavior, and market research - often with a focus on the bigger picture behind the numbers, and always with a practical eye on what drives results.
 
-My work often sits at the intersection of revenue operations, strategy, marketing, and analytics. I’ve helped go-to-market and marketing teams uncover growth levers, and track the metrics that actually matter. Whether it’s improving retention, modeling ROI, or surfacing the “why” behind performance trends - I focus on insight that’s actionable, not just accurate.
-
-I bring curiosity, structure, and perspective to every project. And I believe the best analytics doesn’t just answer questions - it helps ask better ones.
+Curious by nature, methodical by habit, I’m drawn to the messy middle where business logic meets market reality.
