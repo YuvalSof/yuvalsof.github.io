@@ -168,7 +168,7 @@ Now we can predict much better the house prices in Boston Metropolitan 47 years 
 
 
 <div align="center">
-  <img src="/assets/img/posts/range-against-the-machine/image7.jpng" alt="Alt text" style="max-width: 100%;"><br>
+  <img src="/assets/img/posts/range-against-the-machine/image7.png" alt="Alt text" style="max-width: 100%;"><br>
   <em>Figure 6: MLJar AutoML Leaderboard</em>
 </div>
 
