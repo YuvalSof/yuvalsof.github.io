@@ -11,7 +11,7 @@ title: Home
 
 <figure style="text-align: center;">
   <img src="/assets/img/home/home.png" alt="Range Against the Machine cover" style="max-width: 70%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
-  <figcaption style="margin-top: 0.5em;"><em>Hand-coded beats one-click ML — sometimes.</em></figcaption>
+  <figcaption style="margin-top: 0.5em;"><em>Hand-coded beats one-click ML - sometimes.</em></figcaption>
 </figure>
 
 ---
