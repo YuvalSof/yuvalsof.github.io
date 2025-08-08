@@ -2,7 +2,7 @@
 layout: home
 ---
 
-# Range Against the Machine is a blog where a business analyst challenges AutoML using feature intuition, context-aware modeling, and domain reasoning — proving that sometimes, knowing your neighborhoods matters more than brute force
+# Range Against the Machine is a blog where a business analyst challenges AutoML using feature intuition, context-aware modeling, and domain reasoning - proving that sometimes, knowing your neighborhoods matters more than brute force
 
 
 ---
