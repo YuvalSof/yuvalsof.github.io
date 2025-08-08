@@ -11,11 +11,13 @@ author: yuval
 
 **Using Principal Component Analysis (PCA) as a quick pause to explore the urban market dynamics behind the principal components and applying business reasoning before doing any modeling laid the groundwork for feature engineering that's more than just math.**
 
-<div align="center">
-  <img src="/assets/img/posts/range-against-the-machine/image1.png" alt="Alt text" style="max-width: 60%;">
+<div style="width: 100%; max-width: 60%; margin: 0 auto; overflow: hidden; height: 90%; position: relative;">
+  <img src="/assets/img/posts/range-against-the-machine/image1.png"
+       alt="Alt text"
+       style="width: 100%; position: relative; top: 0; height: 111.11%;">
 </div>
 
-
+---
 
 Recently, I was officially assigned by the Massachusetts Institute of Technology to re-examine the **Boston Housing dataset** in light of emerging ML technologies. (Yes, I deserve a career in branding or PR just for phrasing it like that - but technically, it’s true.)
 
@@ -43,10 +45,10 @@ In our dataset, PCA helps identify features consistently associated with high ho
 It also helps us spot features whose relationship with price isn't consistent - features that behave differently across axes. Some of these may turn out to be better suited as classifiers. I argue that many of these different behaviors of features along the axes are caused by residential market dynamics we all intuitively familiar with. Let’s have a look!
 
 
-<div align="center">
-  <img src="/assets/img/posts/range-against-the-machine/image2.png" alt="Alt text" style="max-width: 60%;"><br>
-  <em>Figure 1: First 6 PCAs in the Boston House Pricing dataset explain almost 90% of variance</em>
-</div>
+<figure style="text-align: center;">
+  <img src="/assets/img/posts/range-against-the-machine/image2.png" alt="Alt text" style="max-width: 60%; height: auto; display: block; margin: 0 auto;">
+  <figcaption style="margin-top: 0.5em;"><em>Figure 1: First 6 PCAs in the Boston House Pricing dataset explain almost 90% of variance</em></figcaption>
+</figure>
 ---
 
 ## PCA-Aided Feature Engineering
