@@ -1,16 +1,19 @@
 ---
 layout: post
-title: "Range Against the Machine"
+title: "Range Against the Machine Case 1 - The Model That Outsmarted AutoML
+subtitle: Because It Understood the Neighborhood"
 date: 2025-08-07
 categories: [case studies, modeling]
 tags: [machine learning, business analytics, feature engineering, PCA, Boston house price dataset]
 author: Yuval Soffer
 ---
-Before getting down to business with model building, I took a step back to reflect on the business.
+**Before getting down to business with model building, I took a step back to reflect on the business.**
 
-Using **Principal Component Analysis (PCA)** as a quick pause to explore the urban market dynamics behind the principal components and applying business reasoning before doing any modeling laid the groundwork for feature engineering that's more than just math.
+**Using **Principal Component Analysis (PCA)** as a quick pause to explore the urban market dynamics behind the principal components and applying business reasoning before doing any modeling laid the groundwork for feature engineering that's more than just math.**
 
-
+<div align="center">
+  <img src="/assets/img/posts/range-against-the-machine/image1.jpg" alt="Alt text" style="max-width: 100%;">
+</div>
 
 Recently, I was officially assigned by the Massachusetts Institute of Technology to re-examine the **Boston Housing dataset** in light of emerging ML technologies. (Yes, I deserve a career in branding or PR just for phrasing it like that - but technically, it’s true.)
 
@@ -38,9 +41,10 @@ In our dataset, PCA helps identify features consistently associated with high ho
 It also helps us spot features whose relationship with price isn't consistent - features that behave differently across axes. Some of these may turn out to be better suited as classifiers. I argue that many of these different behaviors of features along the axes are caused by residential market dynamics we all intuitively familiar with. Let’s have a look!
 
 
-
-Figure 1: First 6 PCAs in the Boston House Pricing data set, explain almost 90% of variance
-
+<div align="center">
+  <img src="/assets/img/posts/range-against-the-machine/image2.jpg" alt="Alt text" style="max-width: 100%;"><br>
+  <em>Figure 1: First 6 PCAs in the Boston House Pricing dataset explain almost 90% of variance</em>
+</div>
 ---
 
 ## PCA-Aided Feature Engineering
@@ -70,8 +74,11 @@ So. for my classifiers, I'll rely on LSTAT, PTRATIO, and my newly engineered AGE
 Sure, people would usually prefer modern housing and modern neighborhoods, but in some “historic” districts and gentrified areas, we still see strong demand that manifests itself in housing prices.
 
 
+<div align="center">
+  <img src="/assets/img/posts/range-against-the-machine/image3.jpg" alt="Alt text" style="max-width: 100%;"><br>
+  <em>Figure 2: Age before and after transformation, we can see how the green cluster is now split to left high and right low, showing a clearer downward trend of price as AGE_trans goes up</em>
+</div>
 
-Figure 2: Age before and after transformation, we can see how the green cluster is now split to left high and right low, showing a clearer downward trend of price as AGE_trans goes up
 
 ### Crime
 
@@ -103,16 +110,24 @@ Bringing other strong variables as classifiers may overlap with parts of the sig
 These changes resulted in a more stable and accurate linear regression model. The feature-engineered model outperformed the base model on both key metrics: **R² improved from 0.775 to 0.81**, indicating better explanatory power and **Mean Squared Error dropped from 0.151 to 0.133**, showing lower average prediction error.
 
 
+<div align="center">
+  <img src="/assets/img/posts/range-against-the-machine/image4.jpg" alt="Alt text" style="max-width: 100%;"><br>
+  <em>Figure 3: We can see a flatter LOWESS line compared to the base model that is U shaped, suggesting our non-linear transformed features are doing their job</em>
+</div>
 
-Figure 3: We can see a flatter LOWESS line compared to the base model that is U shaped, suggesting our non-linear transformed features are doing their job
 
 A 10-fold cross-validation showed slightly jumpier R² in the feature-engineered model, however, the variance of error (± std X 2) is slightly reduced in the engineered model (±0.016 vs. ±0.018), suggesting a slightly more stable performance across folds.
+
+---
 
 ### Let’s SHAP
 
 
+<div align="center">
+  <img src="/assets/img/posts/range-against-the-machine/image5.jpg" alt="Alt text" style="max-width: 100%;"><br>
+  <em>Figure 4: SHAP Plot for the linear regression model, not regularized</em>
+</div>
 
-Figure 4: SHAP Plot for the linear regression model, not regularized
 
 The SHAP plot shows that our transformation surfaced the hidden predictive power **AGE**, that is absent from the base model due to insignificance. Besides the humble contribution to the accuracy of the predictive power of the model itself, it adds more business clarity to the model.
 
@@ -137,8 +152,11 @@ Encouraged by the results, I was ready for the next challenge: a nonlinear model
 At this stage, I suspected that my custom transformations might start to lose their edge, after all, tree-based models like XGBoost can already capture nonlinear relationships without the need for squared terms. How did they perform then?
 
 
+<div align="center">
+  <img src="/assets/img/posts/range-against-the-machine/image6.jpg" alt="Alt text" style="max-width: 100%;"><br>
+  <em>Figure 5: SHAP Plot for the XGBoost model: RM 2 and DIS 2 did capture nonlinear patterns that moved the needle. CRIM trans2 that performed well in the linear regression was almost completely redundant</em>
+</div>
 
-Figure 5: SHAP Plot for the XGBoost model: RM 2 and DIS 2 did capture nonlinear patterns that moved the needle. CRIM trans2 that performed well in the linear regression was almost completely redundant
 
 Still, with careful manual tuning across a range of hyperparameters, I squeezed out an **R² of 0.875** from XGBoost alone. Then, with a measured blend of 78% XGBoost for full-bodied predictive power and 22% of my finest Ridge, to balance the variable bouquet, I nudged performance up to **R² = 0.8795** - just ahead of AutoML’s 0.877.
 
@@ -149,14 +167,19 @@ But to me, the takeaway was richer: **domain knowledge and business reasoning ca
 Now we can predict much better the house prices in Boston Metropolitan 47 years ago…
 
 
-
-Figure 6: MLJar AutoML Leaderboard
+<div align="center">
+  <img src="/assets/img/posts/range-against-the-machine/image7.jpg" alt="Alt text" style="max-width: 100%;"><br>
+  <em>Figure 6: MLJar AutoML Leaderboard</em>
+</div>
 
 ---
 
 ## From OLS to Ensemble: The Final Standings
 
-Figure 7: Model Comparison
+<div align="center">
+  <img src="/assets/img/posts/range-against-the-machine/image8.jpg" alt="Alt text" style="max-width: 100%;"><br>
+  <em>Figure 7: Model Comparison</em>
+</div>
 
 ---
 
@@ -170,7 +193,7 @@ The high-crime, aging buildings, short distances, and low-income indicators imme
 
 Then came the tougher nut to crack: the cluster featuring high crime, large residential zones, big homes, and surprisingly high prices - the backbone of the PC3 axis of variation. Marty didn’t hesitate.
 
-**Waltham**, in the late 1970s, was a blue-collar, suburban-industrial town in the midst of economic transition. Certain areas had elevated crime rates compared to wealthier suburbs. But Waltham also had extensive residential zoning, far less density than inner Boston, and, unlike the urban core, most of its housing stock was post-WWII. The rise of mid-century ranches, duplexes, and suburban infill explains the low AGE and high RM we see in the data.
+**Waltham**, in the late 1970s, was a blue-collar, suburban-industrial town in the midst of economic transition. Certain areas had elevated crime rates compared to wealthier suburbs. But Waltham also had extensive residential zoning, far less density than inner Boston, and, unlike the urban core, most of its hous  ing stock was post-WWII. The rise of mid-century ranches, duplexes, and suburban infill explains the low AGE and high RM we see in the data.
 
 ---
 
