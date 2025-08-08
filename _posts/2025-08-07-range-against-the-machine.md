@@ -5,15 +5,17 @@ subtitle: Because It Understood the Neighborhood"
 date: 2025-08-07
 categories: [case studies, modeling]
 tags: [machine learning, business analytics, feature engineering, PCA, Boston house price dataset]
-author: Yuval Soffer
+author: yuval
 ---
 **Before getting down to business with model building, I took a step back to reflect on the business.**
 
-**Using **Principal Component Analysis (PCA)** as a quick pause to explore the urban market dynamics behind the principal components and applying business reasoning before doing any modeling laid the groundwork for feature engineering that's more than just math.**
+**Using Principal Component Analysis (PCA) as a quick pause to explore the urban market dynamics behind the principal components and applying business reasoning before doing any modeling laid the groundwork for feature engineering that's more than just math.**
 
 <div align="center">
-  <img src="/assets/img/posts/range-against-the-machine/image1.png" alt="Alt text" style="max-width: 100%;">
+  <img src="/assets/img/posts/range-against-the-machine/image1.png" alt="Alt text" style="max-width: 60%;">
 </div>
+
+
 
 Recently, I was officially assigned by the Massachusetts Institute of Technology to re-examine the **Boston Housing dataset** in light of emerging ML technologies. (Yes, I deserve a career in branding or PR just for phrasing it like that - but technically, it’s true.)
 
@@ -42,7 +44,7 @@ It also helps us spot features whose relationship with price isn't consistent - 
 
 
 <div align="center">
-  <img src="/assets/img/posts/range-against-the-machine/image2.png" alt="Alt text" style="max-width: 100%;"><br>
+  <img src="/assets/img/posts/range-against-the-machine/image2.png" alt="Alt text" style="max-width: 60%;"><br>
   <em>Figure 1: First 6 PCAs in the Boston House Pricing dataset explain almost 90% of variance</em>
 </div>
 ---
