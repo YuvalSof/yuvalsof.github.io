@@ -12,7 +12,7 @@ author: Yuval Soffer
 **Using **Principal Component Analysis (PCA)** as a quick pause to explore the urban market dynamics behind the principal components and applying business reasoning before doing any modeling laid the groundwork for feature engineering that's more than just math.**
 
 <div align="center">
-  <img src="/assets/img/posts/range-against-the-machine/image1.jpg" alt="Alt text" style="max-width: 100%;">
+  <img src="/assets/img/posts/range-against-the-machine/image1.png" alt="Alt text" style="max-width: 100%;">
 </div>
 
 Recently, I was officially assigned by the Massachusetts Institute of Technology to re-examine the **Boston Housing dataset** in light of emerging ML technologies. (Yes, I deserve a career in branding or PR just for phrasing it like that - but technically, it’s true.)
@@ -42,7 +42,7 @@ It also helps us spot features whose relationship with price isn't consistent - 
 
 
 <div align="center">
-  <img src="/assets/img/posts/range-against-the-machine/image2.jpg" alt="Alt text" style="max-width: 100%;"><br>
+  <img src="/assets/img/posts/range-against-the-machine/image2.png" alt="Alt text" style="max-width: 100%;"><br>
   <em>Figure 1: First 6 PCAs in the Boston House Pricing dataset explain almost 90% of variance</em>
 </div>
 ---
@@ -75,7 +75,7 @@ Sure, people would usually prefer modern housing and modern neighborhoods, but i
 
 
 <div align="center">
-  <img src="/assets/img/posts/range-against-the-machine/image3.jpg" alt="Alt text" style="max-width: 100%;"><br>
+  <img src="/assets/img/posts/range-against-the-machine/image3.png" alt="Alt text" style="max-width: 100%;"><br>
   <em>Figure 2: Age before and after transformation, we can see how the green cluster is now split to left high and right low, showing a clearer downward trend of price as AGE_trans goes up</em>
 </div>
 
@@ -111,7 +111,7 @@ These changes resulted in a more stable and accurate linear regression model. Th
 
 
 <div align="center">
-  <img src="/assets/img/posts/range-against-the-machine/image4.jpg" alt="Alt text" style="max-width: 100%;"><br>
+  <img src="/assets/img/posts/range-against-the-machine/image4.png" alt="Alt text" style="max-width: 100%;"><br>
   <em>Figure 3: We can see a flatter LOWESS line compared to the base model that is U shaped, suggesting our non-linear transformed features are doing their job</em>
 </div>
 
@@ -124,7 +124,7 @@ A 10-fold cross-validation showed slightly jumpier R² in the feature-engineered
 
 
 <div align="center">
-  <img src="/assets/img/posts/range-against-the-machine/image5.jpg" alt="Alt text" style="max-width: 100%;"><br>
+  <img src="/assets/img/posts/range-against-the-machine/image5.png" alt="Alt text" style="max-width: 100%;"><br>
   <em>Figure 4: SHAP Plot for the linear regression model, not regularized</em>
 </div>
 
@@ -153,7 +153,7 @@ At this stage, I suspected that my custom transformations might start to lose th
 
 
 <div align="center">
-  <img src="/assets/img/posts/range-against-the-machine/image6.jpg" alt="Alt text" style="max-width: 100%;"><br>
+  <img src="/assets/img/posts/range-against-the-machine/image6.png" alt="Alt text" style="max-width: 100%;"><br>
   <em>Figure 5: SHAP Plot for the XGBoost model: RM 2 and DIS 2 did capture nonlinear patterns that moved the needle. CRIM trans2 that performed well in the linear regression was almost completely redundant</em>
 </div>
 
@@ -168,7 +168,7 @@ Now we can predict much better the house prices in Boston Metropolitan 47 years 
 
 
 <div align="center">
-  <img src="/assets/img/posts/range-against-the-machine/image7.jpg" alt="Alt text" style="max-width: 100%;"><br>
+  <img src="/assets/img/posts/range-against-the-machine/image7.jpng" alt="Alt text" style="max-width: 100%;"><br>
   <em>Figure 6: MLJar AutoML Leaderboard</em>
 </div>
 
@@ -177,7 +177,7 @@ Now we can predict much better the house prices in Boston Metropolitan 47 years 
 ## From OLS to Ensemble: The Final Standings
 
 <div align="center">
-  <img src="/assets/img/posts/range-against-the-machine/image8.jpg" alt="Alt text" style="max-width: 100%;"><br>
+  <img src="/assets/img/posts/range-against-the-machine/image8.png" alt="Alt text" style="max-width: 100%;"><br>
   <em>Figure 7: Model Comparison</em>
 </div>
 
