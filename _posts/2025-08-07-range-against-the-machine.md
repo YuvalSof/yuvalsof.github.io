@@ -46,7 +46,7 @@ It also helps us spot features whose relationship with price isn't consistent - 
 
 <figure style="text-align: center;">
   <img src="/assets/img/posts/range-against-the-machine/image2.png" alt="Alt text" style="max-width: 60%; height: auto; display: block; margin: 0 auto;">
-  <figcaption style="margin-top: 0.5em;"><em>Figure 1: First 6 PCAs in the Boston House Pricing dataset explain almost 90% of variance</em></figcaption>
+  <figcaption style="margin-top: 0.5em;"><em>Figure 1: First 6 PCs in the Boston House Pricing dataset explain almost 90% of variance</em></figcaption>
 </figure>
 ---
 
