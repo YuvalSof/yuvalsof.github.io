@@ -70,7 +70,7 @@ Using both the PCA output and some domain intuition, I can start distinguishing 
 
 LSTAT is monotonic with our target variable across the principal components - and that checks out. It captures socioeconomic concentration directly.
 
-We all know from experience that young families often tolerate older housing if the local schools are strong. So **PTRATIO** also fits. It aligns well with the target variable across most PCs- 1 through 3, and 5 - even though PCA4 shows a bit of noise.
+We all know from experience that young families often tolerate older housing if the local schools are strong. So **PTRATIO** also fits. It aligns well with the target variable across most PCs- 1 through 3, and 5 - even though PC4 shows a bit of noise.
 
 So. for my classifiers, I'll rely on LSTAT, PTRATIO, and my newly engineered AGE variable, that tells this story, that anyone that toured in a metropolitan can tell:
 
