@@ -1,4 +1,5 @@
 name: Build and Deploy
+
 on:
   push:
     branches: [ "main" ]
@@ -17,17 +18,41 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/configure-pages@v4
-      - uses: ruby/setup-ruby@v1
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.3
           bundler-cache: true
+
       - name: Build site
         run: bundle exec jekyll build -d "_site${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
-      - uses: actions/upload-pages-artifact@v3
+
+      - name: Check post exists in _site
+        run: |
+          set -eu
+          TARGET="_site${{ steps.pages.outputs.base_path }}/posts/range-against-the-machine2/index.html"
+          if [ -f "$TARGET" ]; then
+            echo "✅ Post built: $TARGET"
+          else
+            echo "❌ Post missing at $TARGET"
+            echo "Tree under _site (depth 3):"
+            find "_site${{ steps.pages.outputs.base_path }}" -maxdepth 3 -type d -printf "%p\n" | sort
+            echo "Files that look like the post:"
+            find "_site${{ steps.pages.outputs.base_path }}" -type f -iname "*range-against-the-machine2*.html" -print || true
+            exit 1
+          fi
+
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: "_site${{ steps.pages.outputs.base_path }}"
 
@@ -38,5 +63,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - id: deployment
+      - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4

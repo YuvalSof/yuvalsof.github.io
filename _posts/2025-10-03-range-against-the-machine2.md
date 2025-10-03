@@ -1,9 +1,11 @@
 ---
 layout: post
 title: "Range Against the Machine Case 2 - Beating AutoML by Looking Under the Hood"
-date: 2025-10-03
+date: 2025-10-03 09:00 +0200
 categories: [case studies, modeling]
-tags: [machine learning, business analytics, feature engineering,  Used Cars Dataset, Missing-Values Imputation]
+tags: [machine learning, business analytics, feature engineering,  used uars Dataset, missing values imputation]
+published: true
+permalink: /posts/range-against-the-machine2/
 author: yuval
 ---
 <div style="width: 100%; max-width: 60%; margin: 0 auto; overflow: hidden; height: 90%; position: relative;">
@@ -12,7 +14,8 @@ author: yuval
        style="width: 100%; position: relative; top: 0; height: 111.11%;">
 </div>
 ---
-**Used-car pricing prediction with business signals, not just buttons to click**
+
+## Used-car pricing prediction with business signals, not just buttons to click
 
 In this article, we'll explore several key data preprocessing techniques. We will cover the following topics:
 * Hierarchical Missing Value Imputation 
@@ -22,7 +25,9 @@ In this article, we'll explore several key data preprocessing techniques. We wil
 * Generative AI-Based Data Enrichment
 
 **Will it be enough to beat the machine again?**
+
 ---
+
 Again, I was officially assigned by the Massachusetts Institute of Technology to re-examine an iconic dataset, this time the India used-cars dataset, widely mirrored and originally scraped from CarDekho listings. In practice, the most common variant is a 7.2k × 14 table (Name, Location, Year, Kilometers_Driven, Fuel_Type, Transmission, Owner, Mileage, Engine, Power, Seats, New_Price, Price -  target) that has circulated in tutorials since ~2019–2020. Licensing varies by Kaggle mirror.
 Performance-wise, tree-based regressors routinely reach **~0.93–0.94 R²**, whereas straightforward linear models can drop **below 0.70 R²**. The name of the game here is rigorous cleaning and missing-value imputation. 
 In this article, the added value you won't find in common cover versions, is a little bit of used-car domain sense, the kind anyone who's bought a second-hand car once or twice (or five times, in my case) brings to the table.
