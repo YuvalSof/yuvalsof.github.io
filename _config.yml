@@ -8,6 +8,8 @@ plugins:
   - jekyll-paginate
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-archives      # <- add this
+
 
 # The language of the webpage › http://www.lingoes.net/en/translator/langcode.htm
 # If it has the same name as one of the files in folder `_data/locales`, the layout language will also be changed,
@@ -225,10 +227,9 @@ exclude:
   - "package*.json"
 
 jekyll-archives:
-  enabled: [categories, tags]
-  layouts:
-    category: category
-    tag: tag
+  enabled:
+    - categories
+    - tags
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
