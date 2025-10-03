@@ -1,5 +1,4 @@
 name: Build and Deploy
-
 on:
   push:
     branches: [ "main" ]
@@ -20,13 +19,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v4
-      - uses: actions/jekyll-build-pages@v1
+      - uses: ruby/setup-ruby@v1
         with:
-          source: ./
-          destination: ./_site
+          ruby-version: 3.3
+          bundler-cache: true
+      - name: Build site
+        run: bundle exec jekyll build -d "_site${{ steps.pages.outputs.base_path }}"
+        env:
+          JEKYLL_ENV: production
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ./_site
+          path: "_site${{ steps.pages.outputs.base_path }}"
 
   deploy:
     environment:
