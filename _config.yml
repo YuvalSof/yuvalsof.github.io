@@ -1,14 +1,13 @@
 # The Site Configuration
 
 # Import the theme
-remote_theme: cotes2020/jekyll-theme-chirpy
+theme: jekyll-theme-chirpy
 plugins:
-  - jekyll-remote-theme
   - jekyll-include-cache
   - jekyll-paginate
   - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-archives      # <- add this
+  - jekyll-archives
 
 
 # The language of the webpage › http://www.lingoes.net/en/translator/langcode.htm
