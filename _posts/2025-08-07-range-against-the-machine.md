@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Range Against the Machine Case 1 - The Model That Outsmarted AutoML Because It Understood the Neighborhood"
+title: "Range Against the Machine Case 1 - The Model That Outsmarted AutoML Because it Understood the Neighborhood"
 date: 2025-08-07
 categories: [case studies, modeling]
 tags: [machine learning, business analytics, feature engineering, PCA, Boston house price dataset]
