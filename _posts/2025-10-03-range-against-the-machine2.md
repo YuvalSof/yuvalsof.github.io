@@ -2,7 +2,7 @@
 layout: post
 title: "Range Against the Machine Case 2 - Beating AutoML by Looking Under the Hood"
 date: 2025-10-03 09:00 +0200
-categories: [case studies, modeling]
+categories: [Range Against the Machine]
 tags: [machine learning, business analytics, feature engineering,  used uars Dataset, missing values imputation]
 published: true
 permalink: /posts/range-against-the-machine2/

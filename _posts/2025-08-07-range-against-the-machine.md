@@ -2,8 +2,9 @@
 layout: post
 title: "Range Against the Machine Case 1 - The Model That Outsmarted AutoML Because it Understood the Neighborhood"
 date: 2025-08-07
-categories: [case studies, modeling]
+categories: [Range Against the Machine]
 tags: [machine learning, business analytics, feature engineering, PCA, Boston house price dataset]
+permalink: /posts/range-against-the-machine/
 author: yuval
 ---
 **Before getting down to business with model building, I took a step back to reflect on the business.**
