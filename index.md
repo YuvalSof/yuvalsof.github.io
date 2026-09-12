@@ -8,7 +8,7 @@ title: Home
 > *A blog presenting real analytical solutions I provided. The cases you’re about to read are inspired by actual events that happened in a real usage-based tech company. Certain field names and operational details have been altered to protect sensitive information. Any resemblance to a real business case is not coincidental - because it is one.*
 
 <figure style="text-align: center;">
-  <img src="/assets/img/home/based-on-a-true-story.png" alt="Based on a True Story cover" style="max-width: 70%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+  <img src="/assets/img/home/based-on-a-true-story.jpg" alt="Based on a True Story cover" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
 </figure>
 
 ## Cases

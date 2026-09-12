@@ -6,10 +6,13 @@ categories: [Based on a True Story]
 tags: [sql, business analysis, churn, data visualization, data analysis]
 permalink: /posts/based-on-a-true-story-case-1/
 author: yuval
-image: /assets/img/posts/based-on-a-true-story-1/cover.png
 ---
 
 **No ML, no black box - just structured logic, decision thresholds, and a clean SQL solution.**
+
+<figure style="text-align: center; margin: 1.5rem 0;">
+  <img src="/assets/img/posts/based-on-a-true-story-1/cover.png" alt="Customer churn illustration" style="width: 100%; max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 8px;">
+</figure>
 
 ### What We’ll Cover
 
@@ -18,9 +21,9 @@ image: /assets/img/posts/based-on-a-true-story-1/cover.png
 - A deep dive into the `LAG()` window function and its arguments
 - Dodging survival bias by choosing the right population
 
-The case you’re about to read is inspired by actual events that happened in a real usage-based tech company. Certain field names and operational details have been altered to protect sensitive information. Any resemblance to a real business case is not coincidental - because it is one.
+*The case you’re about to read is inspired by actual events that happened in a real usage-based tech company. Certain field names and operational details have been altered to protect sensitive information. Any resemblance to a real business case is not coincidental - because it is one.*
 
-This was a real BI challenge, solved with business understanding, structured problem solving, and technical execution.
+*This was a real BI challenge, solved with business understanding, structured problem solving, and technical execution.*
 
 ---
 
