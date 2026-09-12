@@ -3,7 +3,7 @@ layout: default
 title: Home
 ---
 
-# Based on a True Story.
+# Based on a True Story
 
 > *A blog presenting real analytical solutions I provided. The cases you’re about to read are inspired by actual events that happened in a real usage-based tech company. Certain field names and operational details have been altered to protect sensitive information. Any resemblance to a real business case is not coincidental - because it is one.*
 
