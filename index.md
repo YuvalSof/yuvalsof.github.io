@@ -43,3 +43,18 @@ title: Home
 
 [Case 2 - Beating AutoML by Looking Under the Hood](/posts/range-against-the-machine2/)  
 *Used-car pricing prediction with business signals, not just buttons to click.*
+
+---
+
+# Theory, Made Useful
+
+> *Concepts, models and methods explained without the textbook.*
+
+<figure style="text-align: center;">
+  <img class="series-cover" src="/assets/img/home/theory-made-useful.jpg" alt="Theory, Made Useful cover">
+</figure>
+
+## Explainers
+
+[Explainer 1 - If a Decision Tree Falls in a Random Forest and no One is Around to Hear - Did it Make a Sound?](/posts/if-a-decision-tree-falls-in-a-random-forest/)  
+*On trees, forests, and the noise between them*
