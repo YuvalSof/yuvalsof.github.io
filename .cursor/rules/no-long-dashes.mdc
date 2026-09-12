@@ -1,0 +1,26 @@
+---
+description: Never use long em/en dashes. Always use a regular hyphen in site text.
+alwaysApply: true
+---
+
+# No long dashes
+
+Never write em dashes (U+2014), en dashes (U+2013), or other long dashes in any site text: posts, headlines, homepage links, captions, front matter, or UI copy.
+
+When adapting a Medium post, replace every long dash on the way in. Do this for titles, body, lists, and references.
+
+```text
+# BAD
+Case 1 — Defining Churn
+misleading — or simply impossible
+2019–2020
+
+# GOOD
+Case 1 - Defining Churn
+misleading - or simply impossible
+2019-2020
+```
+
+Leave math minus signs (U+2212) in formulas. Leave ASCII `--` in SQL comments and code.
+
+A hook auto-replaces leftover long dashes after edits. Still write short hyphens yourself so the first draft is clean.

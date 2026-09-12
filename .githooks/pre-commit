@@ -1,0 +1,4 @@
+#!/bin/sh
+# Auto-replace Medium-style long dashes in staged site text before commit.
+SCRIPT="$(git rev-parse --show-toplevel)/.cursor/hooks/replace-long-dashes.ps1"
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$SCRIPT" -ScanStaged
