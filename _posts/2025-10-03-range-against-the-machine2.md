@@ -28,8 +28,8 @@ In this article, we'll explore several key data preprocessing techniques. We wil
 
 ---
 
-Again, I was officially assigned by the Massachusetts Institute of Technology to re-examine an iconic dataset, this time the India used-cars dataset, widely mirrored and originally scraped from CarDekho listings. In practice, the most common variant is a 7.2k × 14 table (Name, Location, Year, Kilometers_Driven, Fuel_Type, Transmission, Owner, Mileage, Engine, Power, Seats, New_Price, Price -  target) that has circulated in tutorials since ~2019–2020. Licensing varies by Kaggle mirror.
-Performance-wise, tree-based regressors routinely reach **~0.93–0.94 R²**, whereas straightforward linear models can drop **below 0.70 R²**. The name of the game here is rigorous cleaning and missing-value imputation. 
+Again, I was officially assigned by the Massachusetts Institute of Technology to re-examine an iconic dataset, this time the India used-cars dataset, widely mirrored and originally scraped from CarDekho listings. In practice, the most common variant is a 7.2k × 14 table (Name, Location, Year, Kilometers_Driven, Fuel_Type, Transmission, Owner, Mileage, Engine, Power, Seats, New_Price, Price -  target) that has circulated in tutorials since ~2019-2020. Licensing varies by Kaggle mirror.
+Performance-wise, tree-based regressors routinely reach **~0.93-0.94 R²**, whereas straightforward linear models can drop **below 0.70 R²**. The name of the game here is rigorous cleaning and missing-value imputation. 
 In this article, the added value you won't find in common cover versions, is a little bit of used-car domain sense, the kind anyone who's bought a second-hand car once or twice (or five times, in my case) brings to the table.
 
 ## The Car that Circled India 285 Times at 247 km/h or Why We Shouldn't Skip df.describe().T
@@ -118,7 +118,7 @@ Our missing values balance, before and after:
 Next, I used the raw 'Name' to tag each car with a class (Sub/Mini-compact, Compact, Minivan, Mid-Size, Large, Small SUV, Standard SUV, Sport/Two-Seater). Different classes target different buyers and often depreciate differently, so this feature can add lift for used-price modeling. Rather than pick one official taxonomy (Euro NCAP, US EPA, China, etc.), I built a compact, balanced schema that keeps categories frequent enough to be useful.
 How it works (lightweight and reproducible):
 
-* Noise filter / normalization: Strip engine badges, trims, drivetrains, years, and other junk (e.g., VTEC, CRDi, AT, 4x4) to isolate the core make–model - same idea as the hierarchical imputation step.
+* Noise filter / normalization: Strip engine badges, trims, drivetrains, years, and other junk (e.g., VTEC, CRDi, AT, 4x4) to isolate the core make-model - same idea as the hierarchical imputation step.
 * Dictionary + back-off: Use an LLM-assisted dictionary to map cleaned names to classes, then apply the same hierarchical back-off (most specific → broader) to fill what the exact key misses.
 
 This captured about five-sixths of rows, leaving ~1/6 unknown for later handling. I won't paste the long LLM-generated script here, but it's in my GitHub. Moral of the story: a pinch of domain sense plus Gen-AI scaffolding = fast, low-effort enrichment. The gain was modest - but it cost me almost nothing to implement.

@@ -14,9 +14,9 @@ author: yuval
   <img src="/assets/img/posts/based-on-a-true-story-4/cover.png" alt="A SQL-Based AvT Allocation Model" style="width: 100%; max-width: 100%; height: auto; display: block; margin: 0 auto; object-fit: contain;">
 </figure>
 
-*Part of the "Based on a True Story" Series — Case 4*
+*Part of the "Based on a True Story" Series - Case 4*
 
-> The nonlinear progression of business metrics over time makes it difficult to know where we truly stand against our targets and forecasts at any given point in the month. Many targets are set monthly, yet managers naturally want visibility at shorter intervals — and sometimes for reasons that go well beyond simple curiosity.
+> The nonlinear progression of business metrics over time makes it difficult to know where we truly stand against our targets and forecasts at any given point in the month. Many targets are set monthly, yet managers naturally want visibility at shorter intervals - and sometimes for reasons that go well beyond simple curiosity.
 
 ### What We'll Cover
 
@@ -27,7 +27,7 @@ author: yuval
 
 ***Disclaimer***
 
-*The case you're about to read is inspired by real events at an online-platform company. Certain field names, market verticals and operational details have been altered to protect sensitive information. Any resemblance to a real business case is* ***not*** *coincidental —* ***because it is one****.*
+*The case you're about to read is inspired by real events at an online-platform company. Certain field names, market verticals and operational details have been altered to protect sensitive information. Any resemblance to a real business case is* ***not*** *coincidental -* ***because it is one****.*
 
 ## Our Business Case Study: Fashion4Seasons Predicts the Present
 
@@ -35,11 +35,11 @@ author: yuval
   <img src="/assets/img/posts/based-on-a-true-story-4/fashion4seasons.png" alt="Fashion4Seasons" style="width: 100%; max-width: 100%; height: auto; display: block; margin: 0 auto; object-fit: contain;">
 </figure>
 
-To illustrate the problem, we'll return once again to our beloved online fashion retailer — **Fashion4Seasons**, home of questionable fashion decisions, ambitious marketing campaigns, and increasingly sophisticated SQL.
+To illustrate the problem, we'll return once again to our beloved online fashion retailer - **Fashion4Seasons**, home of questionable fashion decisions, ambitious marketing campaigns, and increasingly sophisticated SQL.
 
 This time, our protagonist is **Klaus Kursorsson, Senior Manager, Commercial Performance & Downside Discovery**.
 
-In October 2025, Fashion4Seasons launched the **Nordic Office Revival** — a campaign intended to revive its underperforming premium workwear category across Sweden, Denmark, Finland, and Norway.
+In October 2025, Fashion4Seasons launched the **Nordic Office Revival** - a campaign intended to revive its underperforming premium workwear category across Sweden, Denmark, Finland, and Norway.
 
 The campaign combined targeted discounts, prominent homepage placement, paid social, and a tasteful advertising concept built around the slogan:
 
@@ -85,7 +85,7 @@ There was only one problem.
 
 The first 13 days happened to contain an unusually weak mix of them.
 
-October 3 was **National Lagom Day**, created by Swedish fashion retailer Ellos to celebrate the Swedish principle of *lagom* — roughly, neither too much nor too little.
+October 3 was **National Lagom Day**, created by Swedish fashion retailer Ellos to celebrate the Swedish principle of *lagom* - roughly, neither too much nor too little.
 
 This did not prove particularly helpful to a campaign whose commercial objective was, broadly speaking, **more**.
 
@@ -97,11 +97,11 @@ The remaining part of October had a more favorable weekday mix.
 
 There was also a recurring **late-month pay-cycle effect** in Fashion4Seasons' Nordic business, with sales typically accelerating during the final week.
 
-And **October 31 itself was a Friday** — historically one of the stronger combinations of day-of-month and day-of-week for the category.
+And **October 31 itself was a Friday** - historically one of the stronger combinations of day-of-month and day-of-week for the category.
 
 In other words, **42% of October's calendar days had elapsed, but that did not mean that 42% of the October target should already have been achieved**.
 
-Applying Fashion4Seasons' historical **day-of-week and week-of-month patterns** to the actual October 2025 calendar showed that by October 13, only around **31–32% of the month's expected activity** should have occurred.
+Applying Fashion4Seasons' historical **day-of-week and week-of-month patterns** to the actual October 2025 calendar showed that by October 13, only around **31-32% of the month's expected activity** should have occurred.
 
 So the relevant comparison was not:
 
@@ -139,7 +139,7 @@ The forecast had not merely described the future incorrectly.
 
 **It had helped change it.**
 
-By month-end, the initiative really did finish below target — allowing Klaus's original forecast to look considerably more intelligent than it deserved.
+By month-end, the initiative really did finish below target - allowing Klaus's original forecast to look considerably more intelligent than it deserved.
 
 His arithmetic had been perfectly correct.
 
@@ -167,9 +167,9 @@ The more useful question is:
 
 **Given the historical intra-month behavior of the business, what percentage of this month's target should have been achieved by October 13?**
 
-And once we know that, we can build a much better Month-to-Date AvT measure — using nothing more exotic than SQL.
+And once we know that, we can build a much better Month-to-Date AvT measure - using nothing more exotic than SQL.
 
-We know already that **not all months are created equal** — as discussed in my previous *Fashion4Seasons* case, [Because Your MoM and YoY Lie](/posts/based-on-a-true-story-case-3/).
+We know already that **not all months are created equal** - as discussed in my previous *Fashion4Seasons* case, [Because Your MoM and YoY Lie](/posts/based-on-a-true-story-case-3/).
 
 But we must also acknowledge that **not all weeks within a month, or days within a week, are created equal either**.
 
@@ -179,20 +179,20 @@ Moreover, not all Mondays are equal. A Monday that falls on the **1st of the mon
 
 In other words, intra-month behavior is not driven by a single calendar effect. It is shaped by the **combination of where we are in the month and where we are in the week**.
 
-Adding to that, holidays can make intra-month allocation look almost impossible to model. Some occur on fixed Gregorian dates, while others — such as **Chinese New Year or Ramadan** — shift across the Gregorian calendar from year to year, distorting otherwise recurring patterns.
+Adding to that, holidays can make intra-month allocation look almost impossible to model. Some occur on fixed Gregorian dates, while others - such as **Chinese New Year or Ramadan** - shift across the Gregorian calendar from year to year, distorting otherwise recurring patterns.
 
 Fortunately, the solution is **much simpler than it might first appear**.
 
 ### Step 1: Build a Calendar Table
 
-Start by building a calendar table that maps each date to its relevant calendar attributes — for example: **Date, Year, Month, Day of Week, Day of Week Name, and Week of Month**.
+Start by building a calendar table that maps each date to its relevant calendar attributes - for example: **Date, Year, Month, Day of Week, Day of Week Name, and Week of Month**.
 
 Then add flags for recurring calendar effects that may influence business activity, such as:
 
 - `Is_Weekend`
 - `Is_Month_Start`
-- `Is_Month_End` — useful for businesses with payment or activity concentrations around the beginning or end of the month
-- `Is_Quarter_End` — relevant for businesses affected by quarterly payment cycles
+- `Is_Month_End` - useful for businesses with payment or activity concentrations around the beginning or end of the month
+- `Is_Quarter_End` - relevant for businesses affected by quarterly payment cycles
 - `Is_Year_End`
 - `Is_Christmas_Day`
 - `Is_New_Years_Eve`
@@ -202,12 +202,12 @@ Then add flags for recurring calendar effects that may influence business activi
 
 A useful extension is to add **holiday windows**, rather than flagging only the holiday itself. For example:
 
-- `Is_CNY_Dm1` — the day before Chinese New Year
-- `Is_CNY_Dp1` — the day after Chinese New Year
+- `Is_CNY_Dm1` - the day before Chinese New Year
+- `Is_CNY_Dp1` - the day after Chinese New Year
 
 The exact set of flags will differ by business. The important point is to capture the **calendar-driven effects that are actually relevant to your own activity patterns**.
 
-Create a sufficiently broad timeframe that includes both **historical years** — used to derive allocation weights from past business activity — and **future years**, so the same calendar structure can support upcoming allocations.
+Create a sufficiently broad timeframe that includes both **historical years** - used to derive allocation weights from past business activity - and **future years**, so the same calendar structure can support upcoming allocations.
 
 **How to build it?** One simple option is to ask your favorite LLM to generate a reproducible script that builds the table for you.
 
@@ -239,13 +239,13 @@ Month
 
 Day
 
-Day_Of_Week — Monday = 0 through Sunday = 6
+Day_Of_Week - Monday = 0 through Sunday = 6
 
 Day_Of_Week_Name
 
-Is_Weekend — 1 for Saturday/Sunday, otherwise 0
+Is_Weekend - 1 for Saturday/Sunday, otherwise 0
 
-Week_Of_Month — define as CEIL(Day / 7), so days 1–7 = 1, 8–14 = 2, etc.
+Week_Of_Month - define as CEIL(Day / 7), so days 1-7 = 1, 8-14 = 2, etc.
 
 Is_Month_Start
 
@@ -259,15 +259,15 @@ Fixed-date holiday flags
 
 Add binary 0/1 columns for:
 
-Is_Christmas_Day — December 25
+Is_Christmas_Day - December 25
 
-Is_Christmas_Day_Plus1 — December 26
+Is_Christmas_Day_Plus1 - December 26
 
-Is_New_Years_Eve — December 31
+Is_New_Years_Eve - December 31
 
-Is_New_Years_Day — January 1
+Is_New_Years_Day - January 1
 
-Is_Veterans_Day — November 11
+Is_Veterans_Day - November 11
 
 Rule-based holiday and retail-event flags
 
@@ -275,27 +275,27 @@ Rule-based holiday and retail-event flags
 
 Add:
 
-Is_Memorial_Day — US Memorial Day, defined as the last Monday in May
+Is_Memorial_Day - US Memorial Day, defined as the last Monday in May
 
-Is_Thanksgiving — US Thanksgiving, defined as the fourth Thursday in November
+Is_Thanksgiving - US Thanksgiving, defined as the fourth Thursday in November
 
-Is_Black_Friday — the Friday immediately after US Thanksgiving
+Is_Black_Friday - the Friday immediately after US Thanksgiving
 
-Is_Cyber_Monday — the Monday immediately after US Thanksgiving
+Is_Cyber_Monday - the Monday immediately after US Thanksgiving
 
 ... (+ Any other non-fixed special days that have an effect on your metrics)
 
 Also add:
 
-Is_Black_Friday_Weekend — 1 for Black Friday through the following Sunday
+Is_Black_Friday_Weekend - 1 for Black Friday through the following Sunday
 
-Is_Cyber_5 — 1 for the five-day retail period from Thanksgiving through 
+Is_Cyber_5 - 1 for the five-day retail period from Thanksgiving through 
 
 Cyber Monday
 
 Chinese New Year: 
 
-Add accurate Chinese Lunar New Year dates for every year 2020–2035.
+Add accurate Chinese Lunar New Year dates for every year 2020-2035.
 
 Do not infer or approximate Chinese New Year mathematically unless using a 
 
@@ -309,15 +309,15 @@ Create:
 
 Is_CNY_Day
 
-Is_CNY_Window_Dm2_to_Dp2 — 1 for CNY day ±2 days
+Is_CNY_Window_Dm2_to_Dp2 - 1 for CNY day ±2 days
 
-Is_CNY_Dm2 — exactly 2 days before CNY
+Is_CNY_Dm2 - exactly 2 days before CNY
 
-Is_CNY_Dm1 — exactly 1 day before CNY
+Is_CNY_Dm1 - exactly 1 day before CNY
 
-Is_CNY_Dp1 — exactly 1 day after CNY
+Is_CNY_Dp1 - exactly 1 day after CNY
 
-Is_CNY_Dp2 — exactly 2 days after CNY
+Is_CNY_Dp2 - exactly 2 days after CNY
 
 Validation
 
@@ -672,7 +672,7 @@ GROUP BY
 ),
 ```
 
-The previous CTEs built the part of the model that calculates the **weights of our different time components**. The next step is to take the target metric — in this case, the **FP&A sales target for each region** — allocate it across the relevant dates based on those weights, and then aggregate the corresponding **actual sales**. This allows us to compare **Actuals vs. Target (AvT)** on a like-for-like, time-adjusted basis.
+The previous CTEs built the part of the model that calculates the **weights of our different time components**. The next step is to take the target metric - in this case, the **FP&A sales target for each region** - allocate it across the relevant dates based on those weights, and then aggregate the corresponding **actual sales**. This allows us to compare **Actuals vs. Target (AvT)** on a like-for-like, time-adjusted basis.
 
 Date Skeleton CTE for our final output
 
@@ -977,7 +977,7 @@ ORDER BY
 
 Month-to-Date performance looks simple only when we assume that **time progresses linearly for the business**. In reality, weekdays, weekends, position within the month, holidays, and other recurring calendar effects can make a monthly target very unevenly distributed across its days.
 
-By combining a business-specific calendar table with historical **DoW and WoM correction indices**, we can allocate monthly targets according to how the business actually behaves — rather than according to how the calendar happens to be divided.
+By combining a business-specific calendar table with historical **DoW and WoM correction indices**, we can allocate monthly targets according to how the business actually behaves - rather than according to how the calendar happens to be divided.
 
 The result is a lightweight SQL framework that gives managers a much more meaningful answer to the question they inevitably ask before month-end: **"Where do we actually stand against target today?"**
 

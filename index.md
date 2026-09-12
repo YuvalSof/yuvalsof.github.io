@@ -13,16 +13,16 @@ title: Home
 
 ## Cases
 
-[Case 1 — Defining Churn with SQL in a Usage-Based Company](/posts/based-on-a-true-story-case-1/)  
+[Case 1 - Defining Churn with SQL in a Usage-Based Company](/posts/based-on-a-true-story-case-1/)  
 *No ML, no black box - just structured logic, decision thresholds, and a clean SQL solution.*
 
-[Case 2 — Predicting the Present](/posts/based-on-a-true-story-case-2/)  
+[Case 2 - Predicting the Present](/posts/based-on-a-true-story-case-2/)  
 *How time-series counterfactuals reveal the true impact of business changes.*
 
-[Case 3 — Because Your MoM and YoY Lie](/posts/based-on-a-true-story-case-3/)  
+[Case 3 - Because Your MoM and YoY Lie](/posts/based-on-a-true-story-case-3/)  
 *A practical module for cutting through seasonal noise in analysis and modeling.*
 
-[Case 4 — Because Not All Days Are Created Equal](/posts/based-on-a-true-story-case-4/)  
+[Case 4 - Because Not All Days Are Created Equal](/posts/based-on-a-true-story-case-4/)  
 *A SQL-based AvT allocation model for nonlinear month-to-date performance.*
 
 ---
@@ -38,8 +38,8 @@ title: Home
 
 ## Cases
 
-[Case 1 — The Model That Outsmarted AutoML](/posts/range-against-the-machine/)  
+[Case 1 - The Model That Outsmarted AutoML](/posts/range-against-the-machine/)  
 *A PCA-driven rethinking of the Boston Housing classic.*
 
-[Case 2 — Beating AutoML by Looking Under the Hood](/posts/range-against-the-machine2/)  
+[Case 2 - Beating AutoML by Looking Under the Hood](/posts/range-against-the-machine2/)  
 *Used-car pricing prediction with business signals, not just buttons to click.*

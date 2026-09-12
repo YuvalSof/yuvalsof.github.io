@@ -107,7 +107,7 @@ Bringing other strong variables as classifiers may overlap with parts of the sig
 
 ---
 
-## From OLS to Ensemble – The Feature Engineered Model vs the Base Model Against the Machine
+## From OLS to Ensemble - The Feature Engineered Model vs the Base Model Against the Machine
 
 ### Linear Regression
 

@@ -14,22 +14,22 @@ author: yuval
   <img src="/assets/img/posts/based-on-a-true-story-3/cover.png" alt="Because Your MoM and YoY Lie" style="width: 100%; max-width: 100%; height: auto; display: block; margin: 0 auto; object-fit: contain;">
 </figure>
 
-> YoY and MoM comparisons are the 'bread and butter' of analytics, but they can be misleading — or simply impossible to compute and integrate into a model. In those cases, a simple seasonality-correction module can often deliver even better results.
+> YoY and MoM comparisons are the 'bread and butter' of analytics, but they can be misleading - or simply impossible to compute and integrate into a model. In those cases, a simple seasonality-correction module can often deliver even better results.
 
 ### What We'll Cover
 
-- When YoY comparisons lie — and when they're impossible to implement
-- When MoM comparisons lie — and when they're impossible to implement
+- When YoY comparisons lie - and when they're impossible to implement
+- When MoM comparisons lie - and when they're impossible to implement
 - A simple, SQL-based seasonality-correction CTE and the intuitive logic behind it
 - How to incorporate the seasonality correction directly into your model
 
 ***Disclaimer***
 
-*The case you're about to read is inspired by real events at an online-platform company. Certain field names, market verticals and product names have been altered to protect sensitive information. Any resemblance to a real business case is* ***not*** *coincidental —* ***because it is one****.*
+*The case you're about to read is inspired by real events at an online-platform company. Certain field names, market verticals and product names have been altered to protect sensitive information. Any resemblance to a real business case is* ***not*** *coincidental -* ***because it is one****.*
 
 ---
 
-## The Problem: When Period-over-Period Metrics Lie — and When They Become Impossible to Calculate
+## The Problem: When Period-over-Period Metrics Lie - and When They Become Impossible to Calculate
 
 To understand why we use a **Seasonality Correction (SC)** approach instead of relying solely on standard **Period-over-Period (PoP)** comparisons such as YoY and MoM, we need to examine how each method handles noise, data availability, and real-world business constraints.
 
@@ -41,7 +41,7 @@ Beyond theory, there are many structural situations where YoY is either **techni
 
 ### The Cold-Start Problem (New Products)
 
-When a new product launches — say, a new item in the *Winter Clothing* category — there is **no historical data** for a YoY comparison. YoY simply cannot exist.
+When a new product launches - say, a new item in the *Winter Clothing* category - there is **no historical data** for a YoY comparison. YoY simply cannot exist.
 
 By applying a **category-level Seasonality Correction** to the product's first months of sales, we can immediately answer a meaningful question:
 
@@ -53,7 +53,7 @@ This allows for early performance assessment without waiting an entire year.
 
 In predictive modeling (e.g., churn prediction, CLV), recency-based features such as *Last 30 Days Spend* are common. However, **$200 in December does not mean the same thing as $200 in July**.
 
-Applying the SC factor to normalize these inputs allows the model to interpret customer behavior consistently — regardless of acquisition month or prediction timing — reducing seasonal bias in training data.
+Applying the SC factor to normalize these inputs allows the model to interpret customer behavior consistently - regardless of acquisition month or prediction timing - reducing seasonal bias in training data.
 
 ### Irregular or Fast Reporting Cycles
 
@@ -67,7 +67,7 @@ At its core, YoY is a **two-point comparison**. It assumes that the same month l
 
 ### The Base-Effect Trap
 
-If sales were unusually low in June last year — due to a warehouse strike, supply disruption, or one-off event — this year's June growth may appear spectacular (+50%), even if the business is underperforming structurally.
+If sales were unusually low in June last year - due to a warehouse strike, supply disruption, or one-off event - this year's June growth may appear spectacular (+50%), even if the business is underperforming structurally.
 
 Comparing the current period against a **multi-year seasonal baseline** is far more stable than anchoring everything to a single, potentially distorted data point.
 
@@ -79,7 +79,7 @@ Seasonality Correction enables **Adjusted Month-over-Month (MoM)** analysis, whi
 
 ## 3. Why Raw MoM Is Even More Dangerous
 
-Month-over-Month (and QoQ) comparisons are fast and intuitive — but without correction, they are often **worse than YoY**.
+Month-over-Month (and QoQ) comparisons are fast and intuitive - but without correction, they are often **worse than YoY**.
 
 Raw MoM implicitly assumes that consecutive months are directly comparable. In seasonal businesses, that assumption is almost never true:
 
@@ -90,7 +90,7 @@ Seasonality Correction transforms raw MoM into **seasonally adjusted MoM**, allo
 
 *Did performance change beyond what seasonality alone would predict?*
 
-This makes MoM usable not just for monitoring — but for **early signal detection and modeling**.
+This makes MoM usable not just for monitoring - but for **early signal detection and modeling**.
 
 ## Our Business Case Study: *Fashion4Seasons* Technicolor Down Coat
 
@@ -98,15 +98,15 @@ This makes MoM usable not just for monitoring — but for **early signal detecti
   <img src="/assets/img/posts/based-on-a-true-story-3/fashion4seasons.png" alt="Fashion4Seasons" style="width: 100%; max-width: 100%; height: auto; display: block; margin: 0 auto; object-fit: contain;">
 </figure>
 
-To illustrate the solution, we'll go back to our beloved online fashion retailer — **Fashion4Seasons**, which you may recall from [earlier *"Based on a True Story"* episodes](/posts/based-on-a-true-story-case-2/).
+To illustrate the solution, we'll go back to our beloved online fashion retailer - **Fashion4Seasons**, which you may recall from [earlier *"Based on a True Story"* episodes](/posts/based-on-a-true-story-case-2/).
 
 In late 2023, Fashion4Seasons decided to shake things up. After years of tasteful neutrals and "urban minimalist" palettes, the company launched a bold new product: the **Technicolor Down Coat**.
 
-The coat came in aggressively saturated color blocks — electric green sleeves, neon pink shoulders, a lime-green hood, and a bright yellow zipper that seemed to glow even in low light. It looked like something you'd wear while directing traffic at a ski resort… on Mars.
+The coat came in aggressively saturated color blocks - electric green sleeves, neon pink shoulders, a lime-green hood, and a bright yellow zipper that seemed to glow even in low light. It looked like something you'd wear while directing traffic at a ski resort… on Mars.
 
-To support the launch, the marketing team rolled out in early November 2023 a **discerning** viral campaign, set to an electronic **Eurodance** version of Dolly Parton's "Coat of Many Colors." The message was clear: winter is coming, but it doesn't have to be grey — winter can be loud.
+To support the launch, the marketing team rolled out in early November 2023 a **discerning** viral campaign, set to an electronic **Eurodance** version of Dolly Parton's "Coat of Many Colors." The message was clear: winter is coming, but it doesn't have to be grey - winter can be loud.
 
-**November sales were strong — but did they actually meet expectations? And what, exactly, were those expectations?**
+**November sales were strong - but did they actually meet expectations? And what, exactly, were those expectations?**
 
 ## The solution
 
@@ -118,13 +118,13 @@ The solution is a **Seasonality Correction (SC)** methodology, implemented as a 
 
 ### The Seasonality Correction Module
 
-The module computes a **Monthly Seasonality Index** for the *Winter Clothing* category. It captures how much each calendar month typically deviates from that year's average monthly sales — isolating seasonal effects from underlying performance.
+The module computes a **Monthly Seasonality Index** for the *Winter Clothing* category. It captures how much each calendar month typically deviates from that year's average monthly sales - isolating seasonal effects from underlying performance.
 
 **The logic is intentionally simple and transparent:**
 
-- `rawtable` — Aggregates total *Winter Clothing* sales by month and year for the period **2020–2023**.
-- `aggtable` — Calculates a **Seasonality Factor** for each month: **Sales in Month *X* ÷ Average Monthly Sales of that Year**
-- **Final output** — Averages the monthly factors across all four years, producing a stable seasonality index for each month. This step smooths out one-off anomalies (e.g., an unusually cold winter in 2022) and surfaces the *true* seasonal pattern.
+- `rawtable` - Aggregates total *Winter Clothing* sales by month and year for the period **2020-2023**.
+- `aggtable` - Calculates a **Seasonality Factor** for each month: **Sales in Month *X* ÷ Average Monthly Sales of that Year**
+- **Final output** - Averages the monthly factors across all four years, producing a stable seasonality index for each month. This step smooths out one-off anomalies (e.g., an unusually cold winter in 2022) and surfaces the *true* seasonal pattern.
 
 ```sql
 WITH rawtable AS (
@@ -174,7 +174,7 @@ In other words, a raw sales figure observed in December is naturally inflated by
 
 To remove this seasonal distortion, we adjust observed sales using the inverse of the seasonality factor.
 
-By multiplying actual sales by **(1 / `sn.Seasonality_Correction`)**, we effectively strip out the time-of-year effect. What remains is a **seasonally neutralized signal**—a view of performance driven by the product, campaign, or customer behavior itself, rather than the calendar.
+By multiplying actual sales by **(1 / `sn.Seasonality_Correction`)**, we effectively strip out the time-of-year effect. What remains is a **seasonally neutralized signal** - a view of performance driven by the product, campaign, or customer behavior itself, rather than the calendar.
 
 This adjusted metric can then be used consistently:
 
@@ -268,7 +268,7 @@ From the table above, we can see that despite the strong *nominal* month-over-mo
 
 Either the Eurodance campaign failed to resonate with the otherwise refined *Technicolor Down Coat* collection, or this magnificent piece of outerwear was simply ahead of its time… or, quite possibly, both.
 
-The natural next step is to evaluate the **adjusted YoY performance** of the entire winter-clothing section. It may well be that — when compared to last year's "urban minimalist" palettes — the new collection actually performed strongly, despite the underwhelming Eurodance campaign.
+The natural next step is to evaluate the **adjusted YoY performance** of the entire winter-clothing section. It may well be that - when compared to last year's "urban minimalist" palettes - the new collection actually performed strongly, despite the underwhelming Eurodance campaign.
 
 **Can you build that query?**
 
@@ -278,7 +278,7 @@ Seasonality Correction offers a pragmatic alternative. By anchoring performance 
 
 Most importantly, this approach scales. It works just as well for campaign evaluation as it does for feature engineering in predictive models, early performance assessment of new products, or fast decision-making cycles where waiting a full year is not an option.
 
-The real shift is not technical — it's conceptual. Stop asking whether performance is up or down. Start asking whether it is **better or worse than seasonality would predict**. That is where signal begins, and noise ends.
+The real shift is not technical - it's conceptual. Stop asking whether performance is up or down. Start asking whether it is **better or worse than seasonality would predict**. That is where signal begins, and noise ends.
 
 ---
 
