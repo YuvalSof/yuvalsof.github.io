@@ -61,3 +61,6 @@ title: Home
 
 [Explainer 2 - Explaining PCA Like a Hollywood Casting Director](/posts/pca-goes-to-hollywood/)  
 *A fun visual guide to Principal Component Analysis using movie stars and screen chemistry*
+
+[Explainer 3 - When Means Don't Mean a Thing](/posts/when-means-dont-mean-a-thing/)  
+*When chasing the mean leaves your job performance below average*
