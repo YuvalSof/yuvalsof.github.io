@@ -58,3 +58,6 @@ title: Home
 
 [Explainer 1 - If a Decision Tree Falls in a Random Forest and no One is Around to Hear - Did it Make a Sound?](/posts/if-a-decision-tree-falls-in-a-random-forest/)  
 *On trees, forests, and the noise between them*
+
+[Explainer 2 - Explaining PCA Like a Hollywood Casting Director](/posts/pca-goes-to-hollywood/)  
+*A fun visual guide to Principal Component Analysis using movie stars and screen chemistry*
