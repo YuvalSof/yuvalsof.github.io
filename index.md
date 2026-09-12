@@ -19,6 +19,9 @@ title: Home
 [Case 2 — Predicting the Present](/posts/based-on-a-true-story-case-2/)  
 *How time-series counterfactuals reveal the true impact of business changes.*
 
+[Case 3 — Because Your MoM and YoY Lie](/posts/based-on-a-true-story-case-3/)  
+*A practical module for cutting through seasonal noise in analysis and modeling.*
+
 ---
 
 # Range Against the Machine
