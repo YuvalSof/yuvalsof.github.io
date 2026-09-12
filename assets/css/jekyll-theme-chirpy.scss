@@ -1,7 +1,12 @@
 ---
 ---
 
-@use 'main';
+/* prettier-ignore */
+@use 'main
+{%- if jekyll.environment == 'production' -%}
+  .bundle
+{%- endif -%}
+';
 
 /* Sidebar: let the full tagline expand so nav links don't overlap */
 #sidebar .profile-wrapper {
@@ -13,14 +18,38 @@
   display: block !important;
   overflow: visible !important;
   height: auto !important;
+  min-height: 0 !important;
   max-height: none !important;
   -webkit-line-clamp: unset !important;
   line-clamp: unset !important;
   margin-bottom: 0.75rem;
   line-height: 1.45;
+  font-style: italic !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 #sidebar > nav {
   flex-grow: 0 !important;
   flex-shrink: 0;
+}
+
+/* Theme mode dropdown: keep it compact in the narrow sidebar */
+#sidebar .sidebar-bottom #mode-toggle + .dropdown-menu {
+  min-width: 0 !important;
+  width: 9.5rem;
+  padding: 0.35rem !important;
+}
+
+#sidebar .sidebar-bottom #mode-toggle + .dropdown-menu .dropdown-item {
+  padding: 0.35rem 0.6rem;
+  font-size: 0.85rem;
+}
+
+/* Home page series cover images */
+.series-cover {
+  max-width: 65%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }

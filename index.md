@@ -8,7 +8,7 @@ title: Home
 > *A blog presenting real analytical solutions I provided. The cases you’re about to read are inspired by actual events that happened in a real usage-based tech company. Certain field names and operational details have been altered to protect sensitive information. Any resemblance to a real business case is not coincidental - because it is one.*
 
 <figure style="text-align: center;">
-  <img src="/assets/img/home/based-on-a-true-story.jpg" alt="Based on a True Story cover" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+  <img class="series-cover" src="/assets/img/home/based-on-a-true-story.jpg" alt="Based on a True Story cover">
 </figure>
 
 ## Cases
@@ -23,7 +23,7 @@ title: Home
 > *A blog where a business analyst challenges AutoML using feature intuition, context-aware modeling, and domain reasoning - proving that sometimes, knowing your business domain matters more than brute force.*
 
 <figure style="text-align: center;">
-  <img src="/assets/img/home/range-against-the-machine.jpg" alt="Range Against the Machine cover" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+  <img class="series-cover" src="/assets/img/home/range-against-the-machine.jpg" alt="Range Against the Machine cover">
   <figcaption style="margin-top: 0.5em;"><em>Hand-coded beats one-click ML - sometimes.</em></figcaption>
 </figure>
 
