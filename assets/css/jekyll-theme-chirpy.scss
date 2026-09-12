@@ -53,3 +53,17 @@
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
+/* Keep post italics visible; never crop article images */
+.post-content em,
+.post-content i,
+.post-content blockquote {
+  font-style: italic !important;
+}
+
+.post-content img {
+  max-width: 100%;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: contain !important;
+}

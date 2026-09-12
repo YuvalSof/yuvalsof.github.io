@@ -16,6 +16,9 @@ title: Home
 [Case 1 — Defining Churn with SQL in a Usage-Based Company](/posts/based-on-a-true-story-case-1/)  
 *No ML, no black box - just structured logic, decision thresholds, and a clean SQL solution.*
 
+[Case 2 — Predicting the Present](/posts/based-on-a-true-story-case-2/)  
+*How time-series counterfactuals reveal the true impact of business changes.*
+
 ---
 
 # Range Against the Machine
