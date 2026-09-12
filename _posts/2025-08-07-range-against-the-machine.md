@@ -11,11 +11,11 @@ author: yuval
 
 **Using Principal Component Analysis (PCA) as a quick pause to explore the urban market dynamics behind the principal components and applying business reasoning before doing any modeling laid the groundwork for feature engineering that's more than just math.**
 
-<div style="width: 100%; max-width: 60%; margin: 0 auto; overflow: hidden; height: 90%; position: relative;">
-  <img src="/assets/img/posts/range-against-the-machine/image1.png"
-       alt="Alt text"
-       style="width: 100%; position: relative; top: 0; height: 111.11%;">
-</div>
+<figure style="text-align: center; margin: 1.5rem 0;">
+  <img src="/assets/img/posts/range-against-the-machine/real%20image1.png"
+       alt="Range Against the Machine Case 1 cover"
+       style="width: 100%; max-width: 100%; height: auto; display: block; margin: 0 auto; object-fit: contain;">
+</figure>
 
 ---
 

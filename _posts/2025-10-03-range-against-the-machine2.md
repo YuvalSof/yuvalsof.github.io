@@ -8,11 +8,11 @@ published: true
 permalink: /posts/range-against-the-machine2/
 author: yuval
 ---
-<div style="width: 100%; max-width: 60%; margin: 0 auto; overflow: hidden; height: 90%; position: relative;">
-  <img src="/assets/img/posts/range-against-the-machine2/image21.png"
-       alt="Alt text"
-       style="width: 100%; position: relative; top: 0; height: 111.11%;">
-</div>
+<figure style="text-align: center; margin: 1.5rem 0;">
+  <img src="/assets/img/posts/range-against-the-machine2/real%20image%2021.jpg"
+       alt="Range Against the Machine Case 2 cover with rupee symbols"
+       style="width: 100%; max-width: 100%; height: auto; display: block; margin: 0 auto; object-fit: contain;">
+</figure>
 ---
 
 ## Used-car pricing prediction with business signals, not just buttons to click
