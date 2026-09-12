@@ -1,0 +1,26 @@
+---
+---
+
+@use 'main';
+
+/* Sidebar: let the full tagline expand so nav links don't overlap */
+#sidebar .profile-wrapper {
+  flex-shrink: 0;
+  margin-bottom: 1.5rem;
+}
+
+#sidebar .site-subtitle {
+  display: block !important;
+  overflow: visible !important;
+  height: auto !important;
+  max-height: none !important;
+  -webkit-line-clamp: unset !important;
+  line-clamp: unset !important;
+  margin-bottom: 0.75rem;
+  line-height: 1.45;
+}
+
+#sidebar > nav {
+  flex-grow: 0 !important;
+  flex-shrink: 0;
+}
