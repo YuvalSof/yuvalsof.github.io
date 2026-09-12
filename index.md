@@ -22,6 +22,9 @@ title: Home
 [Case 3 — Because Your MoM and YoY Lie](/posts/based-on-a-true-story-case-3/)  
 *A practical module for cutting through seasonal noise in analysis and modeling.*
 
+[Case 4 — Because Not All Days Are Created Equal](/posts/based-on-a-true-story-case-4/)  
+*A SQL-based AvT allocation model for nonlinear month-to-date performance.*
+
 ---
 
 # Range Against the Machine
